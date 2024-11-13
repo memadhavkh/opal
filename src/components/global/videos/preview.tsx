@@ -8,8 +8,8 @@ import CopyLink from './copy-link'
 import RichLink from './rich-link'
 import { truncateString } from '@/lib/utils'
 import { Download } from 'lucide-react'
-import TabMenu from '../../tabs'
-import AiTools from '../ai-tools'
+import TabMenu from '../tabs/tab-menu'
+import AITools from '../ai-tools'
 import VideoTranscript from './video-transcript'
 import { TabsContent } from '@/components/ui/tabs'
 import Activities from '../../activities'
@@ -114,10 +114,10 @@ const VideoPreview = ({ videoId }: Props) => {
         </div>
         <div>
           <TabMenu
-            defaultValue="Ai tools"
-            triggers={['Ai tools', 'Transcript', 'Activity']}
+            defaultValue="AI tools"
+            triggers={['AI tools', 'Transcript', 'Activity']}
           >
-            <AiTools
+            <AITools
               videoId={videoId}
               trial={video.User?.trial}
               plan={video.User?.subscription?.plan}

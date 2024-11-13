@@ -2,7 +2,6 @@
 import React from 'react'
 import Loader from '../loader'
 import CardMenu from './video-card-menu'
-import ChangeVideoLocation from '@/components/forms/change-video-location'
 import CopyLink from './copy-link'
 import Link from 'next/link'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -10,8 +9,8 @@ import { Dot, Share2, User } from 'lucide-react'
 
 type Props = {
   User: {
-    firstname: string | null
-    lastname: string | null
+    firstName: string | null
+    lastName: string | null
     image: string | null
   } | null
   id: string
@@ -75,7 +74,7 @@ const VideoCard = (props: Props) => {
               </Avatar>
               <div>
                 <p className="capitalize text-xs text-[#BDBDBD]">
-                  {props.User?.firstname} {props.User?.lastname}
+                  {props.User?.firstName} {props.User?.lastName}
                 </p>
                 <p className="text-[#6d6b6b]  text-xs flex items-center ">
                   <Dot /> {daysAgo === 0 ? 'Today' : `${daysAgo}d ago`}
@@ -90,7 +89,7 @@ const VideoCard = (props: Props) => {
                   size={12}
                 />
                 <p className="text-xs text-[#9D9D9D] capitalize">
-                  {props.User?.firstname}&apos;s Workspace
+                  {props.User?.firstName}&apos;s Workspace
                 </p>
               </span>
             </div>
