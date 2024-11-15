@@ -7,7 +7,7 @@ import FolderPlusDuotine from "@/components/icons/folder-plus-duotone";
 import WorkspaceForm from "@/components/forms/workspace-form";
 
 const CreateWorkspace = () => {
-    const {data} = useQueryData(['user-worskpaces'], getWorkspaces);
+    const {data} = useQueryData(['user-workspaces'], getWorkspaces);
     const {data: plan} = data as  {
         status: number,
         data: {

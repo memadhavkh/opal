@@ -7,6 +7,7 @@ import { useSearch } from '@/hooks/useSearch'
 import { User } from 'lucide-react'
 import React from 'react'
 import Loader from '../loader'
+import { inviteMembers } from '@/actions/user'
 
 type Props = {
     workspaceId: string
@@ -14,10 +15,10 @@ type Props = {
 
 const Search = ({workspaceId}: Props) => {
     const {query, onSearchQuery, isFetching, onUsers} = useSearch('get-users', 'USERS')
-    // TODO: Sending invitations, wire up the button
-    // const {mutate, isPending} = useMutationData(['invite-member'],
-    //   (data: {recieverId: string, email: string})
-    // );
+
+    const {mutate, isPending} = useMutationData(['invite-member'],
+      (data: {recieverId: string, email: string}) => inviteMembers(workspaceId, data.email, data.recieverId)
+    );
   return (
     <div className="flex flex-col gap-y-5">
       <Input onChange={onSearchQuery} value={query} className='bg-transparent border-2 outline-none' placeholder='Search For Your User...' type='text' />
@@ -42,8 +43,10 @@ const Search = ({workspaceId}: Props) => {
                 <p className="lowercase text-xs bg-white px-2 rounded-lg text-[#1e1e1e]">{user.subscription?.plan}</p>
               </div>
               <div className="flex-1 flex justify-end items-center">
-                <Button onClick={() => {}} variant={'default'} className='w-5/12 font-bold'>
-                  <Loader state={false} color={'#000'}></Loader>
+                <Button onClick={() => {
+                  mutate({receiverId: user.id, email: user.email})
+                }} variant={'default'} className='w-5/12 font-bold'>
+                  <Loader state={isPending} color={'#000'}></Loader>
                 </Button>
               </div>
             </div>

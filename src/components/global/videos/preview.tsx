@@ -12,7 +12,7 @@ import TabMenu from '../tabs/tab-menu'
 import AITools from '../ai-tools'
 import VideoTranscript from './video-transcript'
 import { TabsContent } from '@/components/ui/tabs'
-import Activities from '../../activities'
+import Activities from '@/components/activities'
 import EditVideo from './edit'
 
 type Props = {

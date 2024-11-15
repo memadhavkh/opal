@@ -9,13 +9,13 @@ import {
   StarsIcon,
 } from 'lucide-react'
 
-type Props = {
-  plan: 'PRO' | 'FREE' | undefined
-  trial?: boolean
-  videoId: string
-}
+// type Props = {
+//   plan: 'PRO' | 'FREE' | undefined
+//   trial?: boolean
+//   videoId: string
+// }
 
-const AITools = ({ plan, trial, videoId }: Props) => {
+const AITools = () => {
   //Are they on a free plan?
   //have they already tried the AI feature?
   //if not? Try button
