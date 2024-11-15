@@ -349,7 +349,7 @@ export const moveVideoLocation = async (
         })
   
         const { transporter, mailOptions } = sendMail(
-          video.User?.email,
+          video.User?.email!,
           'You got a viewer',
           `Your video ${video.title} just got its first viewer`
         )
@@ -374,8 +374,8 @@ export const moveVideoLocation = async (
           }
         })
       }
-    } catch (error) {
-      console.log(error)
+    } catch  {
+      return {status: 400}
     }
   }
   
