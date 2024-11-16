@@ -28,9 +28,6 @@ const Payment = async ({
             </div>
         )
     }
-  return (
-   
-  )
 }
 
 export default Payment

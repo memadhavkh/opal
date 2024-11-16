@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '../../ui/card'
 
 type Props = {
     title: string,

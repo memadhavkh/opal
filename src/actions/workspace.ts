@@ -349,6 +349,7 @@ export const moveVideoLocation = async (
         })
   
         const { transporter, mailOptions } = sendMail(
+          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
           video.User?.email!,
           'You got a viewer',
           `Your video ${video.title} just got its first viewer`
