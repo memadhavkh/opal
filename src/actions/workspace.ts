@@ -87,8 +87,8 @@ export const getAllUserVideos = async (workspaceId: string) => {
                 },
                 User: {
                     select: {
-                        firstname: true,
-                        lastname: true,
+                        firstName: true,
+                        lastName: true,
                         image: true
                     }
                 },
@@ -286,11 +286,11 @@ export const moveVideoLocation = async (
                 processing: true,
                 description: true,
                 views: true,
-                summery: true,
+                summary: true,
                 User: {
                     select: {
-                        firstname: true,
-                        lastname: true,
+                        firstName: true,
+                        lastName: true,
                         image: true,
                         clerkid: true,
                         trial: true,
@@ -432,8 +432,8 @@ export const moveVideoLocation = async (
           workSpaceId: true,
           User: {
             select: {
-              firstname: true,
-              lastname: true,
+              firstName: true,
+              lastName: true,
               image: true,
             },
           },

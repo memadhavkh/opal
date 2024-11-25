@@ -16,8 +16,8 @@ datasource db {
 model User {
   id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   email        String         @unique
-  firstname    String?
-  lastname     String?
+  firstName    String?
+  lastName     String?
   createdAt    DateTime       @default(now())
   clerkid      String         @unique
   studio       Media?
@@ -103,7 +103,7 @@ model Video {
   WorkSpace   WorkSpace? @relation(fields: [workSpaceId], references: [id], onDelete: Cascade)
   workSpaceId String?    @db.Uuid
   views       Int        @default(0)
-  summery     String?
+  summary     String?
   Comment     Comment[]
 }
 

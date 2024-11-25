@@ -121,7 +121,7 @@ const VideoPreview = ({ videoId }: Props) => {
               trial={video.User?.trial}
               plan={video.User?.subscription?.plan}
             />
-            <VideoTranscript transcript={video.summery!} />
+            <VideoTranscript transcript={video.summary!} />
             <Activities
               author={video.User?.firstname as string}
               videoId={videoId}
